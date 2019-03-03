@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 def home(request):
     today = datetime.date.today()
-    return render(request, "taskbuster/index.html", {'today': today, 'now': now()})
+    return render(request, "taskmanager/index.html", {'today': today, 'now': now()})
 
 
 def home_files(request, filename):
