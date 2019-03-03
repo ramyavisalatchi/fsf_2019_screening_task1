@@ -21,8 +21,7 @@ sys.path.insert(0, os.path.abspath('..'))
 from django.conf import settings
 settings.configure()
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
+# If extensions (or modules to document with autodoc) are in another director# add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
@@ -53,9 +52,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'TaskBuster'
-copyright = '2015, Marina Mele'
-author = 'Marina Mele'
+project = 'Taskmanager'
+
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -207,7 +205,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'TaskBusterdoc'
+htmlhelp_basename = 'Taskmanagerdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -259,7 +257,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'taskbuster', 'TaskBuster Documentation',
+    (master_doc, 'taskmanager', 'Taskmanager Documentation',
      [author], 1)
 ]
 
