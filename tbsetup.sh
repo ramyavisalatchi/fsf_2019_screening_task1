@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# webanz / anzweb.net@gmail.com 
-# https://github.com/webanz/taskbuster-setup
-
-# See  
-# https://github.com/mineta/taskbuster-boilerplate
-
-# TODO # 
-#  Add proper cmd argument handling 
-#  Use a generated random secret 
-
   
 
 if [ "$#" -ne 4 ]; then
@@ -48,10 +38,10 @@ existVenv() {
 
 
 
-# Taskbuster
-repoUrl='https://github.com/mineta/taskbuster-boilerplate'
-tb_bp='taskbuster-boilerplate'
-tb_proj='taskbuster'
+
+repoUrl='https://github.com/ramyavisalatchi/fsf_2019_screening_task1,
+tb_bp='taskmanager'
+tb_proj='taskmanager'
 
 declare  -A Ev
 Ev=(['_dev']='development' ['_test']='testing')
@@ -103,8 +93,6 @@ do
   deactivate
   echo $VIRTUAL_ENV
 done
-
-# Move taskbuster-boilerplate to target dir
 mv ${tb_bp} ${project_dir}
 # rename project
 mv ${project_dir}/${tb_proj}  ${project_dir}/${project_name}
@@ -114,15 +102,15 @@ urls="'"${project_name}.urls"'"
 wsgi="'"${project_name}.wsgi.application"'"
 settings="${project_name}.settings"
 
-sed  -i "s/ROOT_URLCONF = 'taskbuster.urls'/ROOT_URLCONF = ${urls}/g" \
+sed  -i "s/ROOT_URLCONF = 'taskmanager.urls'/ROOT_URLCONF = ${urls}/g" \
     ${project_dir}/${project_name}/settings/base.py
-sed  -i "s/WSGI_APPLICATION = 'taskbuster.wsgi.application'/WSGI_APPLICATION = ${wsgi}/g" \
+sed  -i "s/WSGI_APPLICATION = 'taskmanager.wsgi.application'/WSGI_APPLICATION = ${wsgi}/g" \
     ${project_dir}/${project_name}/settings/base.py
 
-sed -i 's/os.environ.setdefault("DJANGO_SETTINGS_MODULE", "taskbuster.settings")/os.environ.setdefault("DJANGO_SETTINGS_MODULE","'${settings}'")/g' \
+sed -i 's/os.environ.setdefault("DJANGO_SETTINGS_MODULE", "taskmanager.settings")/os.environ.setdefault("DJANGO_SETTINGS_MODULE","'${settings}'")/g' \
         ${project_dir}/${project_name}/wsgi.py
 
-sed -i 's/os.environ.setdefault("DJANGO_SETTINGS_MODULE", "taskbuster.settings")/os.environ.setdefault("DJANGO_SETTINGS_MODULE","'${settings}'")/g' \
+sed -i 's/os.environ.setdefault("DJANGO_SETTINGS_MODULE", "taskmanager.settings")/os.environ.setdefault("DJANGO_SETTINGS_MODULE","'${settings}'")/g' \
                 ${project_dir}/manage.py
 
 
